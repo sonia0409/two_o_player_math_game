@@ -47,14 +47,11 @@ class Game
     end
     
     def start
-        puts "I am before defining count variable #{@current_player.is_alive?}"
-        is_alive = @current_player.is_alive?
-        while is_alive  
+        puts " #{@current_player.is_alive?}"
+        while @current_player.is_alive? 
         new_question
         @current_player.player == "Player 1"? @current_player == @player2: @current_player == @player1
-        puts "I am in the while loop #{count}"
         end
-    puts "count: #{count}"
     end
     
 end
