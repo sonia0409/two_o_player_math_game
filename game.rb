@@ -31,26 +31,27 @@ class Game
         else
             puts "#{@current_player.player}: Yes! You are correct"
         end
-
-        puts "#{@player1.player}: #{@player1.lives}/3 vs #{@player2.player}: #{@player2.lives}/3"
-
-        puts "-------NEW TURN------"
-        
-      # if @current_player == @player1
-      #  @current_player == @player2
-      #  puts "current_player #{@current_player.player}"
-      # elsif @current_player == @player2
-      #  @current_player == @player1
-      # end 
-      # puts @current_player.player
         
     end
     
     def start
-        puts " #{@current_player.is_alive?}"
         while @current_player.is_alive? 
         new_question
-        @current_player.player == "Player 1"? @current_player = @player2: @current_player = @player1
+        # game over logic
+        if !@player1.is_alive? || !@player2.is_alive? 
+            if @player1.lives > 0 
+                puts "#{@player1.player} wins with a score of #{@player1.lives}/3" 
+            else 
+                puts "#{@player2.player} wins with a score of #{@player2.lives}/3"
+            end
+            p "---GAME OVER---"
+            puts "Good bye!"
+        else
+            puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
+            puts "----NEW TURN----"
+            @current_player.player == "Player 1"? @current_player = @player2: @current_player = @player1
+
+       end
         end
     end
     
