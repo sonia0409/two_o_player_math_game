@@ -50,7 +50,7 @@ class Game
         puts " #{@current_player.is_alive?}"
         while @current_player.is_alive? 
         new_question
-        @current_player.player == "Player 1"? @current_player == @player2: @current_player == @player1
+        @current_player.player == "Player 1"? @current_player = @player2: @current_player = @player1
         end
     end
     
