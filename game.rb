@@ -3,7 +3,6 @@ class Game
     def initialize()
         @player1 = Player.new("Player 1", 3)
         @player2 = Player.new("Player 2", 3) 
-      # puts "player1 lives #{@player1.lives}"
         @current_player = @player1
     end
 
@@ -22,7 +21,6 @@ class Game
         game_question = "#{@current_player.player}: #{question.display}"
         puts game_question
         player_input = gets.chomp.to_i
-        #puts player_input
         
         if !check(player_input,sum)
             puts "#{@current_player.player}: Seriously? No"
