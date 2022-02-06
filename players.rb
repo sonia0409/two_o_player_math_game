@@ -12,7 +12,6 @@ class Player
     end
 
     def is_alive?
-        puts "I am in alive method #{lives}"
         if @lives > 0
             return true
         else 
