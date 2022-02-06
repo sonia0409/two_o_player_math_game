@@ -1,6 +1,6 @@
 class Player
     # will keep track of players(1 or 2)
-    # lives
+    # and lives
     attr_accessor :player, :lives
     def initialize(player, lives)
         @player = player
